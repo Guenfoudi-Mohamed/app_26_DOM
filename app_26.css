@@ -3,19 +3,20 @@
 :is(::after,::before){margin: 0px;padding: 0px;box-sizing: border-box;}
 :root{--margin : 30px;}
 body{min-height: 100vh;margin:0px auto;font-family: Arial, Helvetica, sans-serif;}
-body #container{margin-top: 20px;max-width: 1440px;margin: 0px auto;}
-body #container .head{display: flex;align-items: center;margin: var(--margin) auto;}
+body #container{position: relative;max-width: 1440px;margin: 0px auto;}
+body #container .head{display: flex;align-items: center;margin: var(--margin) auto 0px auto;}
 body #container .head .profile{ width: fit-content;border: 1px solid #000;border-radius: 40px;padding: 5px;display: flex;justify-content: center;align-items: center;position: absolute;left: 25px;}
 body #container .head .profile .img{width:50px;height: 50px;border-radius: 50%;}
 body #container .head .profile .info{margin-left: 15px;margin-right: 10px;}
-body #container .head .title{margin: 0px auto;}
-body #container .head .title h1{font-weight: bold;font-size:  50px;display: flex;align-items: center;font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;}
-body #container .head .title h1 :is(.sun , .moon){width:35px;height: 35px;border-radius: 50%;}
-body #container .head .title h1 .sun{display: flex;align-items: center;position: relative;overflow: hidden;background-color: #fff;margin-right: 1px;}
-body #container .head .title h1 .moon{position: absolute;top: 0px;left: 0px;left: 0px;top: 0px;transform: translate(35px,-35px);background-color: rgb(33,0,57);animation: move 2s infinite linear;}
-body #container .head .title h1 :is(.sun , .moon) i{font-size:30px;display: block;line-height: 35px;text-align: center; -webkit-text-stroke: 1px rgba(255,255,255, 0.8);}
-body #container .head .title h1 .sun > i{color: yellow;-webkit-text-stroke: 1px rgba(0, 0, 0, 0.5);}
-body #container .head .title h1 .moon > i{color: rgb(193, 127, 227);-webkit-text-stroke: 1px rgba(0, 0, 0, 0.5);font-size: 25px; transform: scale(0); animation:moveScale 2s linear infinite;}
+body #container .head .profile .info span, h4{color: #fff;mix-blend-mode: difference;}
+body #container .head .title{margin: 0px auto;display: flex;align-items: center;}
+body #container .head .title h1{font-weight: bold;font-size:  50px;display: flex;align-items: center;font-family: Impact, 'Haettenschweiler', 'Arial Narrow Bold', sans-serif;mix-blend-mode: difference;color: #fff;}
+body #container .head .title  :is(.sun , .moon){width:35px;height: 35px;border-radius: 50%;}
+body #container .head .title  .sun{display: flex;align-items: center;justify-content: center; position: relative;overflow: hidden;margin-right: 1px;border: 1px solid #fff;background-color: #fff;}
+body #container .head .title  .moon{position: absolute;top: 0px;left: 0px;left: 0px;top: 0px;transform: translate(35px,-35px);background-color: rgb(33,0,57);animation: move 2s infinite linear;}
+body #container .head .title  :is(.sun , .moon) i{font-size:25px;display: block;line-height: 35px;text-align: center; -webkit-text-stroke: 1px rgba(255,255,255, 0.8);;}
+body #container .head .title  .sun > i{color: yellow;-webkit-text-stroke: 1px rgba(0, 0, 0, 0.5);}
+body #container .head .title  .moon > i{color: rgb(193, 127, 227);-webkit-text-stroke: 1px rgba(0, 0, 0, 0.5); transform: scale(0); animation:moveScale 2s linear infinite;}
 @keyframes move{
     0%{
         transform: translate(35px,-35px);
@@ -36,16 +37,18 @@ body #container .head .title h1 .moon > i{color: rgb(193, 127, 227);-webkit-text
         transform: scale(1);
     }
 }
-body #container .checkTheme{display: flex;align-items: center;justify-content: center;}
-body #container .checkTheme .inpChange{width: 60px;border-radius: 40px;height: 27px;border: 1px solid #000;background-color:rgb(223, 223, 223);position: relative;margin-left: 10px;cursor: pointer;}
-body #container .checkTheme .inpChange::before{content: '';width: 20px;height: 20px;border-radius: 50%;background-color:#000;position: absolute;top: 3px;left: 3px;}  /*top 1.5px because border of parent == 1px top and bottom && trnslateX(55px)*/
+body #container .checkTheme{display: flex;align-items: center;justify-content: center;margin-top: var(--margin);}
+body #container .checkTheme{color: #fff;mix-blend-mode: difference;}
+body #container .checkTheme .inpChange{width: 60px;border-radius: 40px;height: 27px;border: 1px solid #000;background-color:rgb(223, 223, 223);position: relative;margin-left: 10px;cursor: pointer;--translateX:0px;}
+body #container .checkTheme .inpChange::before{content: '';width: 20px;height: 20px;border-radius: 50%;background-color:rgb(84, 84, 84);position: absolute;top: 3px;left: 3px;transform:translateX(var(--translateX));transition:transform .5s;}  /*top 1.5px because border of parent == 1px top and bottom && trnslateX(55px)*/
 body #container .cards{display: flex;justify-content: center;align-items: center;flex-wrap: wrap;width: 95%; margin: var(--margin) auto var(--margin) auto;}
-body #container .cards .card{padding: 7.5px;border: 1px solid #000;max-width: 280px;}
+body #container .cards .card{padding: 7.5px;border: 1px solid #fff;max-width: 280px;mix-blend-mode: difference;}
 body #container .cards .card:nth-child(2){margin: var(--margin);}
 body #container .cards .card .box{min-height: 100px;background-image:linear-gradient(to left , rgb(209, 209, 209),rgb(62, 62, 62));border-radius: 5px;}
+body #container .cards .card h4, p{color: #fff;mix-blend-mode: difference;}
 body #container .cards .card h4{text-align: center;margin: 5px auto;}
 body #container .cards .card .inps{margin-top:5px;}
-body #container .cards .card .inps .inpBuy, .inpShow{width: 60px;color:#000;cursor: pointer;background-color: yellow;border: 1px solid #000;border-radius: 5px;font-size: 15px; padding: 2.5px;}
+body #container .cards .card .inps .inpBuy, .inpShow{width: 60px;cursor: pointer;background-color: yellow;border: 1px solid rgb(255, 255, 255);border-radius: 5px;font-size: 15px; padding: 2.5px;}
 body #container .cards .card .inps .inpBuy{float: left;}
 body #container .cards .card .inps .inpShow{float: right;}
 @media (min-width:280px) and (max-width:947px) {
@@ -53,3 +56,5 @@ body #container .cards .card .inps .inpShow{float: right;}
     body #container .head .profile{position:initial;margin-bottom: var(--margin);}
     body #container .head .title h1{font-size: 37px;}
 }
+body .DarkMode{width: 100%;min-height: inherit;background-color: rgb(255, 255, 255);z-index: -1;position: fixed;top: 0px;transition:background .5s;}
+body .ActiveDark{background-color: #000;}
