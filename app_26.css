@@ -61,7 +61,7 @@ body #container .cards .card .inps .inpShow{float: right;}
 }
 body .DarkModeBlack{width: 100%;min-height: inherit;background-color: rgb(0, 0, 0);clip-path: circle(0%); z-index: -1;position: fixed;top: 0px;}
 body .DarkModeWhite{width: 100%;min-height: inherit;background-color: #fff; z-index: -2;position: fixed;top: 0px;}
-body .ActiveDark{clip-path: circle(100%);transition:clip-path 5s;}
+body .ActiveDark{clip-path: circle(100%);transition:clip-path 2s;}
 
 @media(prefers-color-scheme:DARK){      /*DETECT DARK MODE OR LGHT MODE*/
     body .DarkModeWhite{background-color:rgba(205, 205, 205, 0.8);}
