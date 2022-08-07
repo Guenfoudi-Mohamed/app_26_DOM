@@ -9,7 +9,7 @@ checkTheme.onclick = function(){
         document.documentElement.style.setProperty('--backgroundCheckTheme','rgb(193, 127, 227)');            
         document.documentElement.style.setProperty('--BeforeColor','#fff');            
         document.documentElement.style.setProperty('--backGroundColor','rgb(193, 127, 227)');   
-        document.documentElement.style.setProperty('--colorBorder','#fff');   
+        document.documentElement.style.setProperty('--colorBorder','#7b7b7b');   
     }
     else{
         document.documentElement.style.setProperty('--translateX','0px');
